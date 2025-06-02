@@ -2,7 +2,7 @@
 
 This small extension adds folder colors and icons to support Diagonal Architecture. In this architecture, the code in `src/domain` does not depend on external libraries (except for a state management library like _tilia_). This helps decouple core business functionality from external services, making the app easier to test and more resilient to change.
 
-![diagonal architecture colored folders](extension.png)
+![diagonal architecture colored folders](https://raw.githubusercontent.com/midasum/diagonal-architecture-extension/main/extension.png)
 
 **After installing**, set the icon theme to "Diagonal Architecture Icons (Dark)" or "Diagonal Architecture Icons (Light)". You can also use the command "Activate Diagonal Architecture Dark Icon Theme" or "Activate Diagonal Architecture Light Icon Theme" respectively.
 
