@@ -1,0 +1,59 @@
+{
+	"iconDefinitions": {
+		"api-feature": { "iconPath": "./icons/rocket-blue.svg" },
+		"api-model": { "iconPath": "./icons/pen-blue.svg" },
+		"api-service": { "iconPath": "./icons/plug-blue.svg" },
+		"api": { "iconPath": "./icons/knot.svg" },
+		"feature": { "iconPath": "./icons/rocket-red.svg" },
+		"file-light": { "iconPath": "./icons/file-light.svg" },
+		"file": { "iconPath": "./icons/file-gray.svg" },
+		"folder-light": { "iconPath": "./icons/folder-light.svg" },
+		"folder-open": { "iconPath": "./icons/folder-open-gray.svg" },
+		"folder": { "iconPath": "./icons/folder-gray.svg" },
+		"gitlab": { "iconPath": "./icons/gitlab.svg" },
+		"graphql": { "iconPath": "./icons/graphql.svg" },
+		"json": { "iconPath": "./icons/json.svg" },
+		"markdown": { "iconPath": "./icons/file_type_markdown.svg" },
+		"package": { "iconPath": "./icons/package.svg" },
+		"pdf": { "iconPath": "./icons/pdf.svg" },
+		"rescript": { "iconPath": "./icons/rescript.svg" },
+		"service": { "iconPath": "./icons/plug-red.svg" },
+		"tex": { "iconPath": "./icons/tex.svg" },
+		"tsconfig": { "iconPath": "./icons/tsconfig.svg" },
+		"typescript": { "iconPath": "./icons/file_type_typescript.svg" },
+		"view": { "iconPath": "./icons/picture-red.svg" },
+		"vite": { "iconPath": "./icons/vite.svg" },
+		"yaml": { "iconPath": "./icons/yaml.svg" }
+	},
+	"folderNames": {
+		"domain/api": "api",
+		"domain/feature": "feature",
+		"domain/model": "model",
+		"service": "service",
+		"api/model": "api-model",
+		"api/feature": "api-feature",
+		"api/service": "api-service",
+		"view": "view"
+	},
+	"fileExtensions": {
+		"gql": "graphql",
+		"graphql": "graphql",
+		"json": "json",
+		"md": "markdown",
+		"pdf": "pdf",
+		"res": "rescript",
+		"tex": "tex",
+		"ts": "typescript",
+		"tsx": "typescript",
+		"yaml": "yaml",
+		"yml": "yaml"
+	},
+	"fileNames": {
+		"tsconfig.json": "tsconfig",
+		"vite.config.js": "vite",
+		"vite.config.ts": "vite",
+		".gitlab-ci.yml": "gitlab"
+	},
+	"folder": "folder-light",
+	"file": "file-light"
+}

@@ -1,0 +1,167 @@
+{
+  "name": "diagonal-architecture",
+  "displayName": "Diagonal Architecture",
+  "icon": "logo.png",
+  "description": "A tiny icon and coloring theme for folders specific to Diagonal Architecture.",
+  "publisher": "midasum",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaspard/diagonal-architecture-extension"
+  },
+  "author": {
+    "name": "Gaspard Anna Bucher"
+  },
+  "version": "0.0.1",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "build": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.45.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.3",
+    "eslint": "^9.25.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3",
+    "vsce": "^2.15.0"
+  },
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "icon",
+    "theme",
+    "architecture",
+    "diagonal",
+    "folder-icons"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onFileSystem:/**"
+  ],
+  "contributes": {
+    "fileDecorations": [
+      {
+        "provider": "diagonal-architecture-decoration-provider"
+      }
+    ],
+    "commands": [
+      {
+        "command": "diagonalArchitecture.activateLightIconTheme",
+        "title": "Activate Diagonal Architecture Light Icon Theme"
+      },
+      {
+        "command": "diagonalArchitecture.activateDarkIconTheme",
+        "title": "Activate Diagonal Architecture Dark Icon Theme"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "diagonal-architecture-dark-icon-theme",
+        "label": "Diagonal Architecture Icons (Dark)",
+        "path": "./dark-icon-theme.json"
+      },
+      {
+        "id": "diagonal-architecture-light-icon-theme",
+        "label": "Diagonal Architecture Icons (Light)",
+        "path": "./light-icon-theme.json"
+      }
+    ],
+    "colors": [
+      {
+        "id": "diagonalArchitecture.api",
+        "description": "Decoration color for API folders",
+        "defaults": {
+          "dark": "#3bf8f8",
+          "light": "#8ad3d3",
+          "highContrast": "#00FFFF"
+        }
+      },
+      {
+        "id": "diagonalArchitecture.feature",
+        "description": "Decoration color for Feature folders",
+        "defaults": {
+          "dark": "#ff70ff",
+          "light": "#d477d4",
+          "highContrast": "#ff37e4"
+        }
+      },
+      {
+        "id": "diagonalArchitecture.service",
+        "description": "Decoration color for Service folders",
+        "defaults": {
+          "dark": "#a76844",
+          "light": "#e6a681",
+          "highContrast": "#A0522D"
+        }
+      },
+      {
+        "id": "diagonalArchitecture.view",
+        "description": "Decoration color for View folders",
+        "defaults": {
+          "dark": "#51b837",
+          "light": "#63bb4e",
+          "highContrast": "#BFFF00"
+        }
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Diagonal Architecture Badges",
+      "properties": {
+        "diagonalArchitecture.badges": {
+          "type": "object",
+          "default": {
+            "api": "@",
+            "feature": "/",
+            "service": "~",
+            "view": "#"
+          },
+          "description": "Configure badges for different code domains.",
+          "properties": {
+            "api": {
+              "type": "string",
+              "default": "@",
+              "description": "Badge for API files"
+            },
+            "feature": {
+              "type": "string",
+              "default": "/",
+              "description": "Badge for Feature files"
+            },
+            "service": {
+              "type": "string",
+              "default": "~",
+              "description": "Badge for Service files"
+            },
+            "view": {
+              "type": "string",
+              "default": ">",
+              "description": "Badge for View files"
+            }
+          }
+        }
+      }
+    }
+  }
+}
