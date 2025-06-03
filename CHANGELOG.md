@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 All changes to the "diagonal-architecture" extension will be documented in this file.
 

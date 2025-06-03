@@ -22,8 +22,9 @@ Here are the folders that have some special meaning in the **Diagonal Architectu
 
 You can configure the colors to use for each special folder:
 
+**settings.json** (User or Workspace)
+
 ```json
-// settings.json
 {
   "workbench.colorCustomizations": {
     "diagonalArchitecture.api": "#3bf8f8",
@@ -44,8 +45,14 @@ You can configure the colors to use for each special folder:
 
 None.
 
+## Related
+
+- We also built [tilia](https://tiliajs.com), an open-source state management library for TypeScript and Rescript with hooks for React.
+
 ## Release Notes
 
-### 1.0.0
+Full [changelog](./CHANGELOG.md).
+
+### 0.0.x
 
 Initial release, colors for "api", "feature", "service", and "view".
