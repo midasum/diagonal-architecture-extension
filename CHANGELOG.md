@@ -1,7 +1,6 @@
 # Change Log
 
-All notable changes to the "diagonal-architecture" extension will be documented in this file.
+All changes to the "diagonal-architecture" extension will be documented in this file.
 
-## [1.0.0]
-
-- Initial release
+- **0.0.2**: Fix repository URL
+- **0.0.1**: Initial release
