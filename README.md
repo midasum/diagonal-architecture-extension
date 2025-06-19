@@ -62,9 +62,10 @@ None.
 
 Full [changelog](./CHANGELOG.md).
 
-### 0.1.0
+### 0.1.x
 
-Rename 'model' to 'entity', add domain icon, add command to create folder structure, single theme file.
+- Rename 'model' to 'entity', add domain icon, add command to create folder structure, single theme file.
+- Small fixes to icons and colors.
 
 ### 0.0.x
 
