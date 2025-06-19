@@ -9,6 +9,7 @@ const defaultBadges = {
   api: "@",
   feature: "/",
   service: "~",
+  test: "°",
   view: ">",
 };
 
@@ -24,28 +25,35 @@ export function activate(context: vscode.ExtensionContext) {
 
   const provider: vscode.FileDecorationProvider = {
     provideFileDecoration(uri: vscode.Uri) {
-      if (uri.fsPath.includes("src/domain/api")) {
+      if (uri.fsPath.includes("domain/api")) {
         return {
           badge: badges.api,
           tooltip: "Interfaces and model definitions",
           color: new vscode.ThemeColor("diagonalArchitecture.api"), // cyan
         };
       }
-      if (uri.fsPath.includes("src/domain/feature")) {
+      if (uri.fsPath.includes("domain/feature")) {
         return {
           badge: badges.feature,
           tooltip: "Features and use cases",
           color: new vscode.ThemeColor("diagonalArchitecture.feature"), // red variant
         };
       }
-      if (uri.fsPath.includes("src/service")) {
+      if (uri.fsPath.includes("domain/test")) {
+        return {
+          badge: badges.test,
+          tooltip: "Acceptance tests",
+          color: new vscode.ThemeColor("diagonalArchitecture.test"), // yellow variant
+        };
+      }
+      if (uri.fsPath.includes("service")) {
         return {
           badge: badges.service,
           tooltip: "External Services",
           color: new vscode.ThemeColor("diagonalArchitecture.service"), // brown
         };
       }
-      if (uri.fsPath.includes("src/view")) {
+      if (uri.fsPath.includes("view")) {
         return {
           badge: badges.view,
           tooltip: "User interface",

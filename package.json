@@ -11,7 +11,7 @@
   "author": {
     "name": "Gaspard Anna Bucher"
   },
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "./dist/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -107,11 +107,20 @@
         }
       },
       {
+        "id": "diagonalArchitecture.test",
+        "description": "Decoration color for Test folders",
+        "defaults": {
+          "dark": "#e0e766",
+          "light": "#a1a75e",
+          "highContrast": "#f8ff71"
+        }
+      },
+      {
         "id": "diagonalArchitecture.service",
         "description": "Decoration color for Service folders",
         "defaults": {
-          "dark": "#a76844",
-          "light": "#e6a681",
+          "dark": "#e6a681",
+          "light": "#a76844",
           "highContrast": "#A0522D"
         }
       },
@@ -119,7 +128,7 @@
         "id": "diagonalArchitecture.view",
         "description": "Decoration color for View folders",
         "defaults": {
-          "dark": "#51b837",
+          "dark": "#83d36f",
           "light": "#63bb4e",
           "highContrast": "#BFFF00"
         }
