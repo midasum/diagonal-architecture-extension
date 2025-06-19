@@ -1,40 +1,34 @@
 {
   "iconDefinitions": {
-    "api-feature": {
+    "rocket-blue": {
       "iconPath": "./icons/rocket-blue.svg"
     },
-    "api-entity": {
+    "pen-blue": {
       "iconPath": "./icons/pen-blue.svg"
     },
-    "api-service": {
+    "plug-blue": {
       "iconPath": "./icons/plug-blue.svg"
     },
-    "api": {
+    "knot": {
       "iconPath": "./icons/knot.svg"
     },
-    "cucumber": {
-      "iconPath": "./icons/cucumber.svg"
+    "cucumber-light": {
+      "iconPath": "./icons/cucumber-light.svg"
     },
-    "cucumber-ts": {
-      "iconPath": "./icons/cucumber-ts.svg"
+    "alembic-green": {
+      "iconPath": "./icons/alembic-green.svg"
     },
-    "feature": {
+    "bulb-blue": {
+      "iconPath": "./icons/bulb-blue.svg"
+    },
+    "rocket-red": {
       "iconPath": "./icons/rocket-red.svg"
     },
-    "file-light": {
-      "iconPath": "./icons/file-light.svg"
+    "file-opacity": {
+      "iconPath": "./icons/file-opacity.svg"
     },
-    "file": {
-      "iconPath": "./icons/file-gray.svg"
-    },
-    "folder-light": {
-      "iconPath": "./icons/folder-light.svg"
-    },
-    "folder-open": {
-      "iconPath": "./icons/folder-open-gray.svg"
-    },
-    "folder": {
-      "iconPath": "./icons/folder-gray.svg"
+    "folder-opacity": {
+      "iconPath": "./icons/folder-opacity.svg"
     },
     "gitlab": {
       "iconPath": "./icons/gitlab.svg"
@@ -57,10 +51,10 @@
     "rescript": {
       "iconPath": "./icons/rescript.svg"
     },
-    "service": {
+    "plug-red": {
       "iconPath": "./icons/plug-red.svg"
     },
-    "test": {
+    "biology": {
       "iconPath": "./icons/biology.svg"
     },
     "tex": {
@@ -72,7 +66,13 @@
     "typescript": {
       "iconPath": "./icons/file_type_typescript.svg"
     },
-    "view": {
+    "rocket-circle": {
+      "iconPath": "./icons/rocket-circle.svg"
+    },
+    "rocket-circle-pink": {
+      "iconPath": "./icons/rocket-circle-pink.svg"
+    },
+    "picture-red": {
       "iconPath": "./icons/picture-red.svg"
     },
     "vite": {
@@ -83,27 +83,29 @@
     }
   },
   "folderNames": {
-    "api/entity": "api-entity",
-    "api/feature": "api-feature",
-    "api/service": "api-service",
-    "domain/api": "api",
-    "domain/feature": "feature",
-    "domain/test": "test",
-    "service": "service",
-    "view": "view"
+    "api/entity": "pen-blue",
+    "api/feature": "rocket-blue",
+    "api/service": "plug-blue",
+    "domain": "bulb-blue",
+    "domain/api": "knot",
+    "domain/feature": "rocket-red",
+    "domain/test": "biology",
+    "service": "plug-red",
+    "view": "picture-red"
   },
   "fileExtensions": {
     "gql": "graphql",
     "graphql": "graphql",
     "json": "json",
     "md": "markdown",
-    "feature": "cucumber",
+    "feature": "cucumber-light",
+    "feature.ts": "alembic-green",
     "pdf": "pdf",
     "res": "rescript",
     "tex": "tex",
     "mts": "typescript",
     "ts": "typescript",
-    "feature.ts": "cucumber-ts",
+    "type.ts": "rocket-circle-pink",
     "tsx": "typescript",
     "yaml": "yaml",
     "yml": "yaml"
@@ -114,6 +116,6 @@
     "vite.config.ts": "vite",
     ".gitlab-ci.yml": "gitlab"
   },
-  "folder": "folder-light",
-  "file": "file-light"
+  "folder": "folder-opacity",
+  "file": "file-opacity"
 }

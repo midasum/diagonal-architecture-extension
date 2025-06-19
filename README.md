@@ -8,15 +8,23 @@ This small extension adds folder colors and icons to support Diagonal Architectu
 
 ## Features
 
-Here are the folders that have some special meaning in the **Diagonal Architecture**, by order of dependency (higher layers depend on lower layers only):
+- Command to create the folder structure
+- Colors for the folders
+- Icons for the folders and files
+- Files with `.type.ts` have a special icon (easier to differentiate from implementation)
 
-| Icon | Name        | Path                    | Description                                                                                                                                                                                                                                                          |
-| ---- | ----------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🖼️   | **view**    | `/src/view`             | Provides the user interface.                                                                                                                                                                                                                                         |
-| 🚀   | **feature** | `/src/domain/feature`   | Contains the implementations of features as defined by the interfaces. Each feature exposes a `make` function that returns the feature based on its dependencies.                                                                                                    |
-| ✒️   | **model**   | `/src/domain/api/model` | Provides the types for business objects managed by the application (for example, what a `Todo` or a `User` is). These models are handwritten and documented. They form the basic "vocabulary".                                                                       |
-| 🪢   | **api**     | `/src/domain/api`       | Groups the public interfaces between different features and integrations. These are the "contracts" that features establish between themselves and with the interface. For feature interfaces, these can be seen as the code expression of a "need" or a "use case". |
-| 🔌   | **service** | `/src/service`          | This part manages access to data and external resources (backend, translations). It abstracts the technical details and exposes objects defined by the interfaces, but contains neither cache nor business logic.                                                    |
+Here are the folders that have some special meaning in the **Diagonal Architecture**, by order of dependency (lower layers depend on higher layers only):
+
+| Icon | Name                       | Path                  | Description                                                                                                                                                                                                       |
+| ---- | -------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 💡   | **domain**                 | `/domain`             | Source of truth for your business rules and vocabulary. It should be easy to test, reason about, and reuse—independent of frameworks and infrastructure.                                                          |
+| 🪢   | **api**                    | `/domain/api`         | Groups the public interfaces between different features and integrations.                                                                                                                                         |
+| ✒️   | **entity**                 | `/domain/api/entity`  | Provides the types for business objects managed by the application (for example, what a `Todo` or a `User` is). These models are handwritten and documented. They form the basic "vocabulary".                    |
+| 🚀️  | **feature api**            | `/domain/api/feature` | Provides the types for business objects managed by the application (for example, what a `Todo` or a `User` is). These models are handwritten and documented. They form the basic "vocabulary".                    |
+| 🔌️  | **service api**            | `/domain/api/service` | Provides the types for business objects managed by the application (for example, what a `Todo` or a `User` is). These models are handwritten and documented. They form the basic "vocabulary".                    |
+| 🚀   | **feature implementation** | `/domain/feature`     | Contains the implementations of features as defined by the interfaces. Each feature exposes a `make` function that returns the feature based on its dependencies.                                                 |
+| 🔌   | **service implementation** | `/service`            | This part manages access to data and external resources (backend, translations). It abstracts the technical details and exposes objects defined by the interfaces, but contains neither cache nor business logic. |
+| 🖼️   | **view implementation**    | `/view`               | Provides the user interface.                                                                                                                                                                                      |
 
 ## Extension Settings
 
@@ -48,10 +56,15 @@ None.
 ## Related
 
 - We also built [tilia](https://tiliajs.com), an open-source state management library for TypeScript and Rescript with hooks for React.
+- We also built [vitest-bdd](https://github.com/midasum/vitest-bdd), a test-runner for Gherkin in Vitest.
 
 ## Release Notes
 
 Full [changelog](./CHANGELOG.md).
+
+### 0.1.0
+
+Rename 'model' to 'entity', add domain icon, add command to create folder structure, single theme file.
 
 ### 0.0.x
 

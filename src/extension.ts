@@ -2,8 +2,8 @@ import * as vscode from "vscode";
 
 // Keep a reference to the registration so we can dispose it on deactivate
 let decorationProviderRegistration: vscode.Disposable | undefined;
-let activateLightIconThemeCommand: vscode.Disposable | undefined;
-let activateDarkIconThemeCommand: vscode.Disposable | undefined;
+let activateIconThemeCommand: vscode.Disposable | undefined;
+let createFolderStructureCommand: vscode.Disposable | undefined;
 
 const defaultBadges = {
   api: "@",
@@ -67,40 +67,74 @@ export function activate(context: vscode.ExtensionContext) {
   decorationProviderRegistration =
     vscode.window.registerFileDecorationProvider(provider);
 
-  activateLightIconThemeCommand = vscode.commands.registerCommand(
-    "diagonalArchitecture.activateLightIconTheme",
+  activateIconThemeCommand = vscode.commands.registerCommand(
+    "diagonalArchitecture.activateIconTheme",
     async () => {
       await vscode.workspace
         .getConfiguration()
         .update(
           "workbench.iconTheme",
-          "diagonal-architecture-light-icon-theme",
+          "diagonal-architecture-icon-theme",
           vscode.ConfigurationTarget.Workspace
         );
       vscode.window.showInformationMessage(
-        "Diagonal Architecture light icon theme activated!"
+        "Diagonal Architecture icon theme activated!"
       );
     }
   );
 
-  activateDarkIconThemeCommand = vscode.commands.registerCommand(
-    "diagonalArchitecture.activateDarkIconTheme",
-    async () => {
-      await vscode.workspace
-        .getConfiguration()
-        .update(
-          "workbench.iconTheme",
-          "diagonal-architecture-dark-icon-theme",
-          vscode.ConfigurationTarget.Workspace
-        );
+  createFolderStructureCommand = vscode.commands.registerCommand(
+    "diagonalArchitecture.createFolderStructure",
+    async (uri?: vscode.Uri) => {
+      // 1. Confirm action with the user
+      const answer = await vscode.window.showWarningMessage(
+        "This will create a diagonal folder structure under the selected folder. Continue?",
+        { modal: true },
+        "Yes"
+      );
+      if (answer !== "Yes") {
+        return;
+      }
+
+      if (!uri) {
+        const selected = await vscode.window.showOpenDialog({
+          canSelectFolders: true,
+          canSelectFiles: false,
+          canSelectMany: false,
+          openLabel: "Select folder to create structure",
+        });
+        if (!selected || selected.length === 0) {
+          vscode.window.showErrorMessage("No folder selected.");
+          return;
+        }
+        uri = selected[0];
+      }
+
+      const folders = [
+        ["domain"],
+        ["domain", "api"],
+        ["domain", "api", "entity"],
+        ["domain", "api", "feature"],
+        ["domain", "api", "service"],
+        ["domain", "feature"],
+        ["domain", "test"],
+        ["service"],
+        ["view"],
+      ];
+
+      for (const segments of folders) {
+        const folderUri = vscode.Uri.joinPath(uri, ...segments);
+        await vscode.workspace.fs.createDirectory(folderUri);
+      }
+
       vscode.window.showInformationMessage(
-        "Diagonal Architecture dark icon theme activated!"
+        "Folder structure created successfully."
       );
     }
   );
 
-  context.subscriptions.push(activateLightIconThemeCommand);
-  context.subscriptions.push(activateDarkIconThemeCommand);
+  context.subscriptions.push(createFolderStructureCommand);
+  context.subscriptions.push(activateIconThemeCommand);
   context.subscriptions.push(decorationProviderRegistration);
 }
 
@@ -110,13 +144,8 @@ export function deactivate() {
     decorationProviderRegistration = undefined;
   }
 
-  if (activateLightIconThemeCommand) {
-    activateLightIconThemeCommand.dispose();
-    activateLightIconThemeCommand = undefined;
-  }
-
-  if (activateDarkIconThemeCommand) {
-    activateDarkIconThemeCommand.dispose();
-    activateDarkIconThemeCommand = undefined;
+  if (activateIconThemeCommand) {
+    activateIconThemeCommand.dispose();
+    activateIconThemeCommand = undefined;
   }
 }

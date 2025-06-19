@@ -67,24 +67,28 @@
     ],
     "commands": [
       {
-        "command": "diagonalArchitecture.activateLightIconTheme",
-        "title": "Activate Diagonal Architecture Light Icon Theme"
+        "command": "diagonalArchitecture.activateIconTheme",
+        "title": "Activate Diagonal Architecture Icon Theme"
       },
       {
-        "command": "diagonalArchitecture.activateDarkIconTheme",
-        "title": "Activate Diagonal Architecture Dark Icon Theme"
+        "command": "diagonalArchitecture.createFolderStructure",
+        "title": "Create Diagonal Architecture Folder Structure"
       }
     ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "diagonalArchitecture.createFolderStructure",
+          "when": "explorerResourceIsFolder == true",
+          "group": "99_midasum"
+        }
+      ]
+    },
     "iconThemes": [
       {
-        "id": "diagonal-architecture-dark-icon-theme",
-        "label": "Diagonal Architecture Icons (Dark)",
-        "path": "./dark-icon-theme.json"
-      },
-      {
-        "id": "diagonal-architecture-light-icon-theme",
-        "label": "Diagonal Architecture Icons (Light)",
-        "path": "./light-icon-theme.json"
+        "id": "diagonal-architecture-icon-theme",
+        "label": "Diagonal Architecture Icons",
+        "path": "./icon-theme.json"
       }
     ],
     "colors": [
