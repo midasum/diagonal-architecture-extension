@@ -72,8 +72,8 @@
     "rocket-circle-pink": {
       "iconPath": "./icons/rocket-circle-pink.svg"
     },
-    "picture-red": {
-      "iconPath": "./icons/picture-red.svg"
+    "picture-green": {
+      "iconPath": "./icons/picture-green.svg"
     },
     "vite": {
       "iconPath": "./icons/vite.svg"
@@ -91,7 +91,7 @@
     "domain/feature": "rocket-red",
     "domain/test": "biology",
     "service": "plug-red",
-    "view": "picture-red"
+    "view": "picture-green"
   },
   "fileExtensions": {
     "gql": "graphql",
@@ -99,13 +99,13 @@
     "json": "json",
     "md": "markdown",
     "feature": "cucumber-light",
-    "feature.ts": "alembic-green",
     "pdf": "pdf",
     "res": "rescript",
     "tex": "tex",
     "mts": "typescript",
     "ts": "typescript",
     "type.ts": "rocket-circle-pink",
+    "feature.ts": "alembic-green",
     "tsx": "typescript",
     "yaml": "yaml",
     "yml": "yaml"
