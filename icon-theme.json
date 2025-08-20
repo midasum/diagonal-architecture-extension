@@ -51,6 +51,9 @@
     "rescript": {
       "iconPath": "./icons/rescript.svg"
     },
+    "rescript-type": {
+      "iconPath": "./icons/rescript-type.svg"
+    },
     "plug-red": {
       "iconPath": "./icons/plug-red.svg"
     },
@@ -101,6 +104,7 @@
     "feature": "cucumber-light",
     "pdf": "pdf",
     "res": "rescript",
+    "resi": "rescript-type",
     "tex": "tex",
     "mts": "typescript",
     "ts": "typescript",
